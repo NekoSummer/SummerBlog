@@ -1,4 +1,4 @@
-package cn.xinyueneko.web.nswp;
+package cn.xinyue_neko.web.nswp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

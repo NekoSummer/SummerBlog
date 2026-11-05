@@ -1,5 +1,7 @@
-package cn.xinyueneko.web.nswp.posts;
+package cn.xinyue_neko.web.nswp.posts;
 
+import cn.xinyue_neko.web.nswp.NswpApplication;
+import cn.xinyue_neko.web.nswp.utils.AppPathUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -9,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 @Component
@@ -19,7 +20,7 @@ public class PostsDirInitializer implements ApplicationRunner {
     private final Path postsDir;
 
     public PostsDirInitializer(@Value("${spring.posts.dir:posts}") String dir) {
-        postsDir = Paths.get(dir).toAbsolutePath().normalize();
+        postsDir = AppPathUtils.resolvePostsDir(dir, NswpApplication.class);
     }
 
     @Override

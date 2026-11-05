@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NS BLOG</title>
+    <link rel="icon" type="image/svg+xml" th:href="@{images/logo.svg}">
+</head>
+<body>
+<header>
+    <h1>博客列表</h1>
+</header>
+<main>
+    <p th:text="${p1}"></p>
+    <ul>
+        <li th:each="post: ${posts}">
+            <a th:href="'/posts/' + ${post.filename}" th:text="${post.title}"></a>
+        </li>
+    </ul>
+</main>
+</body>
+</html>

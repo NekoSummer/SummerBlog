@@ -10,8 +10,8 @@
     </parent>
     <groupId>cn.xinyue-neko.web</groupId>
     <artifactId>NSWP</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>NSWP</name>
+    <version>1.1.0-SNAPSHOT</version>
+    <name>NekoWP</name>
     <description>NSWP</description>
     <url/>
     <licenses>
@@ -115,6 +115,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>${project.name}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.graalvm.buildtools</groupId>

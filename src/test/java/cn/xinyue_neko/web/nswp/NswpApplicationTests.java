@@ -1,4 +1,4 @@
-package cn.xinyueneko.web.nswp;
+package cn.xinyue_neko.web.nswp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

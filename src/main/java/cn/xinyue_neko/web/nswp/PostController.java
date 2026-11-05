@@ -1,6 +1,7 @@
-package cn.xinyueneko.web.nswp;
+package cn.xinyue_neko.web.nswp;
 
-import cn.xinyueneko.web.nswp.posts.PostService;
+import cn.xinyue_neko.web.nswp.posts.PostMeta;
+import cn.xinyue_neko.web.nswp.posts.PostService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
+@Deprecated
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
@@ -21,7 +24,7 @@ public class PostController {
     }
 
     @GetMapping
-    public List<String> list() throws IOException {
+    public List<PostMeta> list() throws IOException {
         return service.lsPosts();
     }
 
