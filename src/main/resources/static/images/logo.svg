@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+    <!-- 纯正方形背景 -->
+    <rect width="128" height="128" fill="#56FFEF" />
+
+    <!-- 像素方块文字，保持边缘锐利 -->
+    <g fill="#FFFFFF" shape-rendering="crispEdges">
+
+        <!-- 字母 N -->
+        <path d="M12,54h4v4h-4zM12,58h4v4h-4zM12,62h4v4h-4zM12,66h4v4h-4zM12,70h4v4h-4zM16,58h4v4h-4zM20,62h4v4h-4zM24,66h4v4h-4zM28,54h4v4h-4zM28,58h4v4h-4zM28,62h4v4h-4zM28,66h4v4h-4zM28,70h4v4h-4z"/>
+
+        <!-- 字母 E -->
+        <path d="M40,54h20v4h-20zM40,62h16v4h-16zM40,70h20v4h-20zM40,58h4v4h-4zM40,66h4v4h-4z"/>
+
+        <!-- 字母 K -->
+        <path d="M68,54h4v4h-4zM68,58h4v4h-4zM68,62h4v4h-4zM68,66h4v4h-4zM68,70h4v4h-4zM84,54h4v4h-4zM80,58h4v4h-4zM72,62h8v4h-8zM80,66h4v4h-4zM84,70h4v4h-4z"/>
+
+        <!-- 字母 O -->
+        <path d="M96,54h20v4h-20zM96,70h20v4h-20zM96,58h4v4h-4zM96,62h4v4h-4zM96,66h4v4h-4zM112,58h4v4h-4zM112,62h4v4h-4zM112,66h4v4h-4z"/>
+
+    </g>
+</svg>
