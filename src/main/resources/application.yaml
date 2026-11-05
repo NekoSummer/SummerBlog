@@ -1,3 +1,12 @@
 spring:
   application:
     name: NSWP
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+  web:
+    resources:
+      static-locations:
+        - classpath:/static/
