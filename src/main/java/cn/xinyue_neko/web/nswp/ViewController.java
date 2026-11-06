@@ -27,7 +27,7 @@ public class ViewController {
         return "index";
     }
 
-    @GetMapping({"/blogs", "/blogs.php" /* 恶搞彩蛋 */,})
+    @GetMapping({"/blogs", "/blogs.php"})
     public String blogs(Model model) throws IOException {
         var posts = service.lsPosts();
         model.addAttribute("p1", "这边是博客的列表");
@@ -36,7 +36,7 @@ public class ViewController {
         return "blogs";
     }
 
-    @GetMapping({"/about", "/about.php" /* 恶搞彩蛋 */,})
+    @GetMapping({"/about", "/about.php"})
     public String about(Model model) {
         var text = """
 我们只是一个人, 一个高中生为爱发电做出来的服务器
