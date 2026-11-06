@@ -16,7 +16,7 @@ public class ViewController {
         service = postService;
     }
 
-    @GetMapping({"/", "/index"})
+    @GetMapping({"/", "/index", "/index.php" /* 恶搞彩蛋 */,})
     public String index(Model model) {
         var p1 = """
 这是一个1.13.2的Spigot服务器
@@ -27,7 +27,7 @@ public class ViewController {
         return "index";
     }
 
-    @GetMapping({"/blogs"})
+    @GetMapping({"/blogs", "/blogs.php" /* 恶搞彩蛋 */,})
     public String blogs(Model model) throws IOException {
         var posts = service.lsPosts();
         model.addAttribute("p1", "这边是博客的列表");
@@ -36,7 +36,7 @@ public class ViewController {
         return "blogs";
     }
 
-    @GetMapping({"/about"})
+    @GetMapping({"/about", "/about.php" /* 恶搞彩蛋 */,})
     public String about(Model model) {
         var text = """
 我们只是一个人, 一个高中生为爱发电做出来的服务器
