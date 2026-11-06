@@ -1,7 +1,7 @@
 package cn.xinyue_neko.web.nswp;
 
 import cn.xinyue_neko.web.nswp.utils.AppPathUtils;
-
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +22,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * text: 这是一个加载器
+ * 用于加载posts/目录的html文件
+ *
+ * @author NewmoomCat
+ */
+
+@Slf4j
 @Controller
 public class PostViewController {
 
@@ -67,7 +75,7 @@ public class PostViewController {
                     .body(renderedHtml);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("读取或渲染文章失败，请求路径: {}", target, e);
             return ResponseEntity.internalServerError().body("读取文章失败");
         }
     }
