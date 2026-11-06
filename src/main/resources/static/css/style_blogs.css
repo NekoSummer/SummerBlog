@@ -1,50 +1,127 @@
-/* 占位符 */
-
-body {
+/* 1. 全局重置 */
+* {
     margin: 0;
-    min-height: 100vh;
-    background: url('/images/bg/bg1.png') no-repeat center center / cover;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* 2. 基础页面与全屏背景 */
+body {
+    min-height: 100vh;
+    /* 全屏背景图 */
+    background: url("/images/bg/bg1.png") no-repeat center center / cover;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #ffffff;
+
+    /* 让 header, main, footer 垂直均匀排布 */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+}
+
+/* 3. 全屏毛玻璃效果 */
 body::before {
     content: "";
-    position: fixed; /* 固定在屏幕上 */
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+/* ======================================= */
+/* 4. 核心：让 header, main, footer 本身变成居中容器 */
+header, main, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* 水平居中 */
+    justify-content: center;
+    text-align: center;
     width: 100%;
-    height: 100%;
-
-    /* 核心魔法：背景模糊 */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
-
-    /* 毛玻璃通常需要一点点暗色或白色的底色，这里加 30% 的黑色，让白字更清晰 */
-    background: rgba(0.3, 0.3, 0.3, 0.3);
-
-    z-index: -1; /* 把它压在文字下面 */
-} /* 放到最底层，但在 body 背景图之上 */
-
-ul {
-    list-style: none; /* 去掉左边的白点 */
-    padding: 0;       /* 去掉默认的左内边距 */
-    margin: 0;
 }
 
-li {
-    margin: 15px 0;   /* 给列表项之间加点间距，别挤在一起 */
+/* 调整头部位置，不要死死贴着屏幕顶部 */
+header {
+    padding-top: 15vh; /* 距离顶部留点空间 */
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
 }
 
-/* 2. 重置超链接（a标签）的样式 */
-a {
-    color: #56ffE5;       /* 改成 Minecraft 经典的草绿色（或者用纯白 #fff） */
-    text-decoration: none;/* 去掉讨厌的下划线 */
-    font-size: 1.2rem;    /* 稍微放大一点点 */
-    font-weight: bold;    /* 加粗一点，看得更清楚 */
-    transition: all 0.3s; /* 加个平滑过渡动画 */
+/* 调整底部，让“返回首页”靠下一点 */
+footer {
+    margin-top: auto; /* 自动把 footer 推到底部 */
+    padding-bottom: 40px;
 }
 
-/* 3. 鼠标放上去（悬停）的效果 */
-a:hover {
-    color: #ffffff;       /* 鼠标放上去变成纯白色 */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* 加个发光效果，超级好看！ */
+/* ======================================= */
+
+/* 5. 中间段落文字 (p1) 的处理 */
+main p {
+    color: #ddd;
+    margin-bottom: 30px; /* 和下面的面板隔开 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* 6. 局部毛玻璃面板 */
+.blog-panel {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    /* 宽度限定 */
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+}
+
+/* 7. 列表样式清理 */
+.blog-panel ul {
+    list-style: none;
+}
+.blog-panel li {
+    margin-bottom: 12px;
+}
+.blog-panel li:last-child {
+    margin-bottom: 0;
+}
+
+/* 8. 文章列表链接（宽屏大按钮） */
+.blog-panel a {
+    display: block; /* 撑满宽度 */
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* 悬停动效（你选的 #55ffef） */
+.blog-panel a:hover {
+    background: rgba(85, 255, 239, 0.1);
+    border-color: rgba(85, 255, 239, 0.6);
+    transform: translateX(8px);
+    color: #55ffef;
+}
+
+/* 9. 返回首页链接 */
+footer a {
+    color: #55ffef;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(85, 255, 239, 0.8);
 }

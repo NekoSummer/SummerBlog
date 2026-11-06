@@ -12,11 +12,14 @@
 </header>
 <main>
     <p th:text="${p1}"></p>
-    <ul>
-        <li th:each="post: ${posts}">
-            <a th:href="'/posts/' + ${post.filename}" th:text="${post.title}"></a>
-        </li>
-    </ul>
+    <div class="blog-panel">
+        <ul>
+            <li th:each="post: ${posts}">
+                <a th:href="'/posts/' + ${post.filename}" th:text="${post.title}"></a>
+            </li>
+        </ul>
+    </div>
+
 </main>
 <footer>
     <a th:href="@{/}">返回首页</a>
