@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NekoSummer</title>
+    <link rel="icon" type="image/svg+xml" th:href="@{images/logo.svg}">
+</head>
+<body>
+<header>
+    <h1>关于我们</h1>
+</header>
+<main>
+    <pre th:text="${text}" style="font-size: 29px"></pre>
+    <p>特别鸣谢: @NewmoomCat</p>
+</main>
+<footer>
+    <a th:href="@{/}">回到首页</a>
+</footer>
+</body>
+</html>

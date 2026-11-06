@@ -2,15 +2,25 @@
 <html lang="zh" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>NS BLOG</title>
-    <link rel="icon" type="image/svg+xml" th:href="@{images/logo.svg}">
+    <title>NekoSummer</title>
+    <link rel="icon" type="image/svg+xml" th:href="@{/images/logo.svg}">
+    <link rel="stylesheet" th:href="@{/css/style_main.css}">
 </head>
 <body>
 <header>
-    <h1>猫猫博客页面</h1>
+    <h1>猫之夏服务器</h1>
 </header>
 <main>
-    <p th:text="${p1}"></p>
+    <pre th:text="${p1}" style="font-size: 29px"></pre>
+
+    <ul>
+        <li>
+            <a th:href="@{/blogs}">博客列表</a>
+        </li>
+        <li>
+            <a th:href="@{/about}">关于我们</a>
+        </li>
+    </ul>
 </main>
 </body>
 </html>
